@@ -8,11 +8,29 @@
                     "module": [
                         {
                             "name": "DM12-PR56",
-                            "deployable":true
+                            "environment": [
+                                {
+                                    "deployable": true,
+                                    "name": "QA"
+                                },
+                                {
+                                    "deployable": false,
+                                    "name": "QAP1"
+                                }
+                            ]
                         },
                         {
                             "name": "DM12-PR92",
-                            "deployable":false
+                            "environment": [
+                                {
+                                    "deployable": true,
+                                    "name": "QA"
+                                },
+                                {
+                                    "deployable": false,
+                                    "name": "QAP1"
+                                }
+                            ]
                         }
                     ]
                 }

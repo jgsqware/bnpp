@@ -2,7 +2,7 @@
 import com.xlson.groovycsv.CsvParser
 import java.nio.file.Paths
 
-def cli = new CliBuilder(usage: 'gating.groovy -[f] <module> <environment>')
+def cli = new CliBuilder(usage: 'gating-csv.groovy -[f] <module> <environment>')
 cli.with {
     h longOpt: 'help', 'Show usage information'
     f longOpt: 'gating-file', args: 1, argName: 'file.csv', 'Specifiy an external file. Default: "resources/gating.csv"'
