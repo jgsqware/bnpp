@@ -2,6 +2,7 @@
 @Grab(group='com.jayway.jsonpath', module='json-path', version='2.2.0')
 import static com.jayway.jsonpath.JsonPath.parse
 import java.nio.file.Paths
+import com.jayway.jsonpath.InvalidJsonException
 
 def cli = new CliBuilder(usage: 'gating-json.groovy -[f] <module> <environment>')
 cli.with {
@@ -35,6 +36,7 @@ def environment = options.arguments()[1].toUpperCase()
 
 println "Is " + module + " deployable on " + environment + " ?"
 
+try{
 def module_env = parse(Paths.get(gatingFile).text).read('$..module[?(@.name == "'+module+'")].environment[?(@.name == "'+environment+'")]')
 if(module_env.size() >0){
     if(module_env[0].deployable){
@@ -44,6 +46,10 @@ if(module_env.size() >0){
         println "No"
         System.exit(1)
     }
+}
+} catch(InvalidJsonException invalidJsonException){
+    println 'JSON file "'+gatingFile+'" is not valid.'
+    System.exit(2)
 }
 
 println "\"$module\" on \"$environment\" not found"
