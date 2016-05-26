@@ -1,0 +1,22 @@
+{
+    "application": [
+        {
+            "name": "MBB",
+            "app_code": [
+                {
+                    "name": "DM12",
+                    "module": [
+                        {
+                            "name": "DM12-PR56",
+                            "deployable":true
+                        },
+                        {
+                            "name": "DM12-PR92",
+                            "deployable":false
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

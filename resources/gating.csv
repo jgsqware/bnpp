@@ -1,0 +1,5 @@
+application,appcode,module,environment,deployable
+MBB,DM12,DM12-PR56,QA,true
+MBB,DM12,DM12-PR56,QAP1,false
+MBB,DM12,DM12-PR92,QA,true
+MBB,DM12,DM12-PR92,QAP1,false
